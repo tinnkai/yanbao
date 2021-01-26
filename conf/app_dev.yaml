@@ -1,0 +1,93 @@
+# app
+app:
+  pageSize: 10
+  jwtSecret: 233
+  prefixUrl: http://127.0.0.1:8080
+  runtimeRootPath: runtime/
+  imageSavePath: upload/images/
+  # MB
+  imageMaxSize: 5
+  imageAllowExts: 
+    - .jpg
+    - .jpeg
+    - .png
+  exportSavePath: export/
+  qrCodeSavePath: qrcode/
+  fontSavePath: fonts/
+  logSavePath: logs/
+  logSaveName: log
+  logFileExt: log
+  dateFormat: 2006-01-02
+  dateTimeFormat: 2006-01-02 15:04:05
+
+# server
+server:
+  runMode: debug
+  httpPort: 8080
+  readTimeout: 60s
+  writeTimeout: 60s
+
+database:
+  type: mysql
+  user: root
+  password: root
+  host: 127.0.0.1
+  port: 3306
+  name: ginapi
+  maxIdleConns: 20
+  maxOpenConns: 100
+  tablePrefix: 
+
+databaseactivity:
+  type: mysql
+  user: root
+  password: root
+  host: 127.0.0.1
+  port: 3306
+  name: activity
+  maxIdleConns: 20
+  maxOpenConns: 100
+  tablePrefix: 
+
+redis:
+  password: 
+  host: 127.0.0.1:6379
+  db: 5
+  maxIdle: 50
+  maxActive: 1000
+  idleTimeout: 10s
+
+session:
+  #是否开启session
+  sessionOn : true
+  #设置session名称
+  sessionName : sessionid
+  sessionProvider : redis
+  #配置 地址:端口,连接池,密码,库名
+  host : 127.0.0.1:6379
+  #cookie的有效期（秒），默认是session,即会话结束则过期
+  sessionCookieLifetime : 86400
+  #设置 Session 过期的时间，默认值是 3600 秒
+  sessionGcmaxLifetime : 86400
+  #空闲连接数
+  maxIdleConns : 30
+  #最大连接数
+  poolSize : 200
+  #库名
+  db : 0
+
+log:
+  #错误路劲层级
+  skip : 2
+
+#IP
+ip:
+  #白名单列表
+  whiteList : 
+    - 192.168.121.138
+    - 192.168.121.138
+    - 127.0.0.1
+    #黑名单列表
+  blackList : 
+    - 192.168.121.150
+    - 192.168.121.160
